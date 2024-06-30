@@ -34,9 +34,6 @@ if (isset($_POST['enviar'])) {
         ";
 
         $mail->send();
-        echo 'El mensaje se envió correctamente.';
-    } catch (Exception $e) {
-        echo "Error al enviar el mensaje: {$mail->ErrorInfo}";
         echo "<script>alert('El mensaje se envió correctamente.');</script>";
     } catch (Exception $e) {
         echo "<script>alert('Error al enviar el mensaje: {$mail->ErrorInfo}');</script>";
