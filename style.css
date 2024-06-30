@@ -1,0 +1,490 @@
+/* Estilos generales que ya tienes */
+:root {
+    --prelude: #c1bee7;
+    --kingfisher-daisy: #55057d;
+    --seagull: #74beec;
+    --fuchsia-blue: #8c5ebc;
+    --persian-blue: #2112e0;
+    --seance: #8415ab;
+    --royal-blue: #554be3;
+    --santas-gray: #a4a4b4;
+}
+
+body {
+    font-family: 'Roboto', 'Lato', 'Open Sans', 'Source Sans Pro', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: var(--seagull);
+    color: white;
+    padding: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    background: white;
+    transition: width .3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+video{
+    width: 400px;
+    height: 200px;
+    object-fit: cover;
+}
+
+main {
+    padding: 2rem;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+.content-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.left-image {
+    order: 1;
+    margin-right: 1rem;
+}
+
+.right-image {
+    order: 2;
+    margin-left: 1rem;
+}
+
+.text-content {
+    order: 2;
+    width: 60%;
+}
+
+.text-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.text-content ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.text-content ul li img {
+    margin-right: 0.5rem;
+    width: 52px; /* Tamaño de 24x24 píxeles */
+    height: 52px; /* Tamaño de 24x24 píxeles */
+    border-radius: 50%; /* Forma circular */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+form label {
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+form input {
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+form button {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background-color: var(--seance);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.gallery-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.gallery {
+    text-align: center;
+    display: flex;
+    overflow: hidden;
+    position: relative; /* Añadir posición relativa */
+    width: 1500px;
+    height: 800px;
+}
+
+.gallery img {
+    min-width: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.gallery-container button {
+    background-color: var(--seance);
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.gallery-container button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10; /* Asegura que los botones están por encima de las imágenes */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.gallery-container button:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo más oscuro al pasar el ratón */
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.video-wrapper {
+    width: 100%;
+    max-width: 800px; /* Ajuste para adaptarse a pantallas más pequeñas */
+}
+
+.responsive-video {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+#prev {
+    left: 0;
+}
+
+#next {
+    right: 0;
+}
+
+footer {
+    background-color: var(--prelude);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.footer-content {
+    max-width: 800px; /* Ancho máximo para el contenido del footer */
+    margin: 0 auto; /* Centrar el contenido del footer */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-content p {
+    margin: 0.5rem 0;
+}
+
+.footer-content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-content ul li {
+    margin-bottom: 1rem;
+}
+
+.footer-content ul h3 {
+    margin-bottom: 0.5rem;
+}
+
+.footer-content ul ul {
+    padding-left: 1rem;
+}
+
+.footer-content ul a {
+    color: white;
+    text-decoration: none;
+}
+
+.icons {
+    margin-top: 1rem;
+}
+
+.icons img {
+    width: 36px;
+    height: 36px;
+    margin-right: 1rem;
+    border-radius: 50%; /* Forma circular */
+}
+
+/* Línea horizontal debajo del nombre de la empresa */
+.footer-content > p:first-of-type {
+    border-bottom: 1px solid white;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-content ul {
+        text-align: left;
+    }
+
+    .icons {
+        margin-top: 1rem;
+    }
+}
+
+#floating-action-button {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--seance);
+    color: white;
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 50%; /* Forma circular */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+#floating-action-button:hover {
+    background-color: var(--royal-blue); /* Cambio de color al pasar el ratón */
+    transform: scale(1.1); /* Efecto de escala al pasar el ratón */
+}
+
+@media (max-width: 1024px) {
+    /* Estilos para tablet */
+    .content-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-image, .right-image {
+        order: 0; /* Cambia el orden de las imágenes */
+        margin: 0; /* Quita el margen entre las imágenes */
+        width: 100%; /* Ancho completo para imágenes */
+    }
+
+    .text-content {
+        width: 100%; /* Ancho completo para el contenido de texto */
+    }
+
+    .text-content ul li {
+        flex-direction: column; /* Apila los elementos de lista */
+        align-items: flex-start; /* Alinea los elementos a la izquierda */
+    }
+
+    .text-content ul li img {
+        margin-bottom: 0.5rem; /* Espacio inferior entre iconos */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Estilos para móvil */
+    .content-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-content ul li {
+        flex-direction: column; /* Apila los elementos de lista */
+        align-items: flex-start; /* Alinea los elementos a la izquierda */
+    }
+
+    .text-content ul li img {
+        margin-right: 0; /* Quita el margen derecho de los íconos */
+        margin-bottom: 0.5rem; /* Espacio inferior entre íconos */
+    }
+
+    .gallery-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .gallery {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+    }
+
+    .video-wrapper {
+        width: 100%;
+        padding: 0 1rem; /* Añade un poco de espacio lateral */
+    }
+
+    .responsive-video {
+        width: 100%;
+        height: auto;
+    }
+
+    .gallery-container button {
+        top: auto;
+        bottom: 0; /* Posiciona los botones en la parte inferior en pantallas pequeñas */
+        transform: translateY(0);
+        width: 100%; /* Botones de ancho completo */
+    }
+
+    #prev {
+        left: 0;
+    }
+
+    #next {
+        right: 0;
+    }
+}
+
+.gallery-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.gallery {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    position: relative;
+    width: 100%;
+}
+
+.gallery img {
+    min-width: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+button#prev, button#next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    z-index: 10;
+}
+
+button#prev {
+    left: 0;
+}
+
+button#next {
+    right: 0;
+}
+
+@media (max-width: 768px) {
+    button#prev, button#next {
+        top: auto;
+        bottom: 0;
+        transform: translateY(0);
+        width: 50%;
+    }
+
+    button#prev {
+        left: 0;
+    }
+
+    button#next {
+        right: 0;
+    }
+}
+
+/* Agrega esto a tu archivo style.css */
+#chat-container {
+    position: fixed;
+    bottom: 10%;
+    right: 10%;
+    width: 300px;
+    height: 400px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: none; /* Oculto por defecto */
+    z-index: 1000;
+}
+
+#floating-action-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #008cba;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 999;
+}
+
+#floating-action-button:hover {
+    background-color: #005f6a;
+}
+
+
+.mapa-y-formulario {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.map-container {
+    flex: 1 1 60%; 
+    max-width: 600px; 
+}
+
+.formulario {
+    flex: 1 1 40%; 
+    margin-left: 200px;
+    max-width: 400px; 
+}
