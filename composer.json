@@ -1,0 +1,17 @@
+{
+    "name": "jesus/code-link",
+    "autoload": {
+        "psr-4": {
+            "Jesus\\CodeLink\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "arxdevelop",
+            "email": "ajrh.dev@gmail.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.9"
+    }
+}
