@@ -1,4 +1,5 @@
 <?php
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -15,15 +16,15 @@ if (isset($_POST['enviar'])) {
         $mail->isSMTP();
         $mail->Host = 'smtp-mail.outlook.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'codelinksupiicsa@outlook.com'; 
-        $mail->Password = 'Ajrh971224<3'; 
+        $mail->Username = 'codelinksupiicsa@outlook.com';
+        $mail->Password = 'Ajrh971224<3';
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
         $mail->setFrom('codelinksupiicsa@outlook.com', 'CODE-LINKS');
         $mail->addAddress('ajrh.dev@gmail.com', 'Admin');
         $mail->Subject = 'Nuevo mensaje desde el formulario de contacto';
-        
+
         $mail->isHTML(true);
         $mail->Body = "
             <p><strong>Nombre:</strong> $nombre</p>
@@ -36,8 +37,10 @@ if (isset($_POST['enviar'])) {
         echo 'El mensaje se envió correctamente.';
     } catch (Exception $e) {
         echo "Error al enviar el mensaje: {$mail->ErrorInfo}";
+        echo "<script>alert('El mensaje se envió correctamente.');</script>";
+    } catch (Exception $e) {
+        echo "<script>alert('Error al enviar el mensaje: {$mail->ErrorInfo}');</script>";
     }
 } else {
-    echo 'No se pudo enviar el mensaje. Por favor, intenta nuevamente más tarde.';
+    echo "<script>alert('No se pudo enviar el mensaje. Por favor, intenta nuevamente más tarde.');</script>";
 }
-?>
